@@ -57,8 +57,8 @@ preload.prototype = {
 		this.game.load.audio('star01', ['Sounds/star01.ogg', 'Sounds/star01.mp3']);
 		this.game.load.audio('mouseOver', ['Sounds/mouseOver.ogg', 'Sounds/mouseOver.mp3']);
 		this.game.load.audio('mouseDown', ['Sounds/mouseDown.ogg', 'Sounds/mouseDown.mp3']);
-		//this.game.load.audio('musicgameplay', ['Music/monkeeper_gameplay_44100.ogg', 'Music/monkeeper_gameplay_44100.mp3']);
-		//this.game.load.audio('musicplay', ['Music/monkeeper_main_44100.ogg', 'Music/monkeeper_main_44100.mp3']);
+		this.game.load.audio('musicgameplay', ['Music/monkeeper_gameplay_44100.ogg', 'Music/monkeeper_gameplay_44100.mp3']);
+		this.game.load.audio('musicplay', ['Music/monkeeper_main_44100.ogg', 'Music/monkeeper_main_44100.mp3']);
 			console.log('sounds loaded');
 	},
 
