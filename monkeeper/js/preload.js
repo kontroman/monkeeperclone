@@ -1,20 +1,27 @@
-var preload = function(game){}
+var preload = function(game){
+	console.log('preloader started');
+};
 
 preload.prototype = {
 	preload: function(){
+
+		console.log('as');
+	
 		var preloaderBG = this.add.sprite(0,0,"preloaderBG");
+		var progressBar = this.add.sprite(279, 305, 'progressBar');
+
 		//images
 		this.game.load.image("background", "Art/Backgrounds/MainBG.jpg");
 		this.game.load.image("element_border", "Art/element_border.png");
 		this.game.load.image("element_box2", "Art/element_box2.png");
 		this.game.load.image("element_bush", "Art/element_bush.png");
-		this.game.load.image("gameplayIntro", "gameplayIntro.png");
-		this.game.load.image("gameplayTip", "Art/gameplayTip.png");
+		this.game.load.image("gameIntro", "Art/gameIntro.png");
+		this.game.load.image("gameTip", "Art/gameTip.png");
 		this.game.load.image("progressBar", "Art/progressBar.png");
 		this.game.load.image("rocksBottom", "Art/rocksBottom.png");
 		this.game.load.image("gameBG", "Art/Backgrounds/gameBG.jpg");
 		this.game.load.image("levelsBG", "Art/Backgrounds/levelsBG.jpg");
-		//this.game.load.image("preloaderBG", "Art/Backgrounds/preloaderBG.jpg");
+		this.game.load.image("preloaderBG", "Art/Backgrounds/preloaderBG.jpg");
 		this.game.load.image("starBig_inactive", "Art/GUI/starBig_inactive.png");
 		this.game.load.image("starBig_active", "Art/GUI/starBig_active.png");
 		this.game.load.image("star_inactive", "Art/GUI/star_inactive.png");
@@ -34,7 +41,7 @@ preload.prototype = {
 		this.game.load.spritesheet("levelCaption", "Art/levelCaption.png", 270, 2280);
 		this.game.load.spritesheet("monkey", "Art/monkey.png", 1080, 142);
 		this.game.load.spritesheet("nextBtn", "Art/nextBtn.png", 140, 70);
-		this.game.load.spritesheet("retryBtn", "Art/retryBtn.png.png", 140, 70);
+		this.game.load.spritesheet("retryButton", "Art/retryButton.png", 140, 70);
 			console.log('sprites loaded');
 
 		//font
@@ -50,17 +57,17 @@ preload.prototype = {
 		this.game.load.audio('star01', ['Sounds/star01.ogg', 'Sounds/star01.mp3']);
 		this.game.load.audio('mouseOver', ['Sounds/mouseOver.ogg', 'Sounds/mouseOver.mp3']);
 		this.game.load.audio('mouseDown', ['Sounds/mouseDown.ogg', 'Sounds/mouseDown.mp3']);
-		this.game.load.audio('musicgameplay', ['Sounds/monkeeper_gameplay_44100.ogg', 'Sounds/monkeeper_gameplay_44100.mp3']);
-		this.game.load.audio('musicplay', ['Sounds/monkeeper_main_44100.ogg', 'Sounds/monkeeper_main_44100.mp3']);
+		//this.game.load.audio('musicgameplay', ['Music/monkeeper_gameplay_44100.ogg', 'Music/monkeeper_gameplay_44100.mp3']);
+		//this.game.load.audio('musicplay', ['Music/monkeeper_main_44100.ogg', 'Music/monkeeper_main_44100.mp3']);
 			console.log('sounds loaded');
 	},
 
 	create: function() {
-		musicgameplay = this.game.add.audio('musicgameplay');
-		musicplay = this.game.add.audio('musicplay');
-		musicgameplay.loop = true;
-		musicplay.loop = true;
-
-		this.game.state.start("menu");
+		music_main01 = this.game.add.audio('musicgameplay');
+		music_main02 = this.game.add.audio('musicplay');
+		music_main01.loop = true;
+		music_main02.loop = true;
+		this.game.state.start("PlayMenu");
 	}
+		
 }
