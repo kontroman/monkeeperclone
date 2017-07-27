@@ -3,6 +3,8 @@ var gamestate = function(game){
 };
 
 gamestate.prototype = {
-	
+	preload: function(){
+		console.log('as');
+	}
 
 }

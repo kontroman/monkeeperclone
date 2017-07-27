@@ -6,7 +6,7 @@ boot.prototype = {
 	preload: function(){
 		this.game.stage.backgroundColor = 'DDDDDD';
 		this.game.load.image('preloaderBG', 'Art/Backgrounds/preloaderBG.jpg');
-		this.game.load.image('preloaderProgressBar', 'Art/progressBar.png');
+		this.game.load.image('preloadprogressBar', 'Art/progressBar.png');
 	},
 
 	create: function(){

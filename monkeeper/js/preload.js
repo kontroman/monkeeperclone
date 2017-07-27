@@ -6,9 +6,11 @@ preload.prototype = {
 	preload: function(){
 
 		console.log('as');
+		this.game.load.image("progressBar", "Art/progressBar.png");
 	
 		var preloaderBG = this.add.sprite(0,0,"preloaderBG");
-		var progressBar = this.add.sprite(279, 305, 'progressBar');
+		var progressBar = this.add.sprite(279, 305, "preloadprogressBar");
+		this.load.setPreloadSprite(progressBar);
 
 		//images
 		this.game.load.image("background", "Art/Backgrounds/MainBG.jpg");
@@ -17,7 +19,7 @@ preload.prototype = {
 		this.game.load.image("element_bush", "Art/element_bush.png");
 		this.game.load.image("gameIntro", "Art/gameIntro.png");
 		this.game.load.image("gameTip", "Art/gameTip.png");
-		this.game.load.image("progressBar", "Art/progressBar.png");
+		
 		this.game.load.image("rocksBottom", "Art/rocksBottom.png");
 		this.game.load.image("gameBG", "Art/Backgrounds/gameBG.jpg");
 		this.game.load.image("levelsBG", "Art/Backgrounds/levelsBG.jpg");
